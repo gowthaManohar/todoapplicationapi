@@ -1,0 +1,21 @@
+ if (!(priority === "HIGH" || priority === "MEDIUM" || priority === "LOW")) {
+    response.status(400);
+    response.send("Invalid Todo Priority");
+  }
+
+  if (!(status === "TO DO" || status === "IN PROGRESS" || status === "DONE")) {
+    response.status(400);
+    response.send("Invalid Todo Status");
+  }
+  if (
+    !(category === "WORK" || category === "HOME" || category === "LEARNING")
+  ) {
+    response.status(400);
+    response.send("Invalid Todo Status");
+  }
+  if (!result) {
+    response.status(400);
+    response.send("Invalid Due Date");
+  }
+var frmtdate = format(new Date(date), "yyyy-MM-dd");
+  let result = isValid(new Date(frmtdate));
